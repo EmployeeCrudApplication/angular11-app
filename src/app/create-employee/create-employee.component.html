@@ -1,0 +1,40 @@
+    <div class="container" >
+        <div class="row">
+            <div class="col-12">
+                <h2 style="font-family: Georgia, 'Times New Roman', Times, serif; background-color: rgb(110, 221, 248);  text-align: center;" [hidden]="submitted">Add Employee</h2>
+            </div>
+        </div>
+
+<div class="card mx-auto" style="max-width: 800px;" [hidden]="submitted">
+
+        <div style="max-width: 800px; margin: 10px;">
+            <form>
+                <div class="form-group">
+                    <label for="firstName">First Name :</label>
+                    <input #box1 type="text" class="form-control" id="firstName" [(ngModel)]="employee.firstName"
+                        name="firstName">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name :</label>
+                    <input #box2 type="text" class="form-control" id="lastName" [(ngModel)]="employee.lastName"
+                        name="lastName">
+                </div>
+                <div class="form-group">
+                    <label for="uid">UID :</label>
+                    <input #box3 type="text" class="form-control" id="uid"
+                        (keyup)="getVal(box1.value,box2.value,box3.value)" [(ngModel)]="employee.uid" name="uid">
+                </div>
+                <button class="btn btn-md btn-primary float-right" [disabled]="getButtonStatus()" (click)="save()"> Add
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div [hidden]="!submitted" class="text-justify">
+    <h4 class="bg-success text-white" style="text-align: center;  font-family: Georgia, 'Times New Roman', Times, serif;">Record added successfully</h4>
+    <div style="text-align: center;">
+        <br>
+        <button class="btn btn-info" (click)="newEmployee()">Add More Record</button>
+    </div>
+</div>

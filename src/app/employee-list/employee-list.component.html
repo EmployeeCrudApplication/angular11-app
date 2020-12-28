@@ -1,0 +1,36 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2 style="font-family: Georgia, 'Times New Roman', Times, serif; background-color: rgb(110, 221, 248);  text-align: center;">Employee List</h2>
+        </div>
+        <div class="scrollbar">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">UID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col"><span style="margin-left: 70px;"></span> Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employees | async" >
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.uid}}</td>
+                    <td>{{employee.firstName}}</td>
+                    <td>{{employee.lastName}}</td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-danger" (click)="deleteEmployee(employee.uid)"  >Delete</button>
+                        <button class="btn btn-sm btn-outline-info" (click)="employeeDetails(employee.uid)" style="margin-left: 10px;">Details</button>
+                        <button class="btn btn-sm btn-outline-primary" (click)="editEmployee(employee.uid)" style="margin-left:10px">Edit</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>

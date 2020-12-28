@@ -1,0 +1,14 @@
+.hover:hover{
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+footer{
+    background: black;
+    color: white;
+    padding: 0px 20px;
+    bottom: 0px;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+}
+ 

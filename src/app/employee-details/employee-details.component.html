@@ -1,0 +1,28 @@
+<h2 style="font-family: Georgia, 'Times New Roman', Times, serif; background-color: rgb(110, 221, 248);  text-align: center;">Employee Details</h2>
+
+<hr>
+<div *ngIf="employee" style="text-align: center;">
+    <div>
+        <label ><b>ID: </b></label>{{employee.id}}
+    </div>
+
+    <div>
+        <label ><b>UID: </b></label>{{employee.uid}}
+    </div>
+
+    <div>
+        <label ><b>First Name: </b></label>{{employee.firstName}}
+    </div>
+
+    <div>
+        <label ><b>Last Name: </b></label>{{employee.lastName}}
+    </div>
+
+</div>
+
+<br>
+<br>
+<div style="text-align: center;">
+<button (click)="list()" class="btn btn-primary">Back to Employee List</button>
+</div>
+<br>
